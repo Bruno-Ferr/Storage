@@ -18,5 +18,8 @@ contract Storage {
         storingMap[1] = 2;
     }
 
-    uint256 z = 20; 
+    uint256 z = 20; //0x3
+
+    bool b = true; //0x4 package
+    uint8 c = 0xff; //0x4 package with b
 }

@@ -1,7 +1,7 @@
 const hre = require("hardhat");
 const { keccak256 } = hre.ethers
 
-const addr = '0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9'
+const addr = '0xA51c1fc2f0D1a1b8494Ed1FE312d7C3a78Ed91C0'
 
 async function lookup() {
   const valueX = await hre.ethers.provider.getStorage(addr, '0x1')
@@ -24,6 +24,11 @@ async function lookup() {
   const valueZ = await hre.ethers.provider.getStorage(addr, '0x3')
 
   console.log(`${parseInt(valueZ)} 0x3!`)
+  console.log("############## Package #############################")
+  const Package = await hre.ethers.provider.getStorage(addr, '0x4')
+  //const Package2 = await hre.ethers.provider.getStorage(addr, '0x5')
+
+  console.log(`${parseInt(Package)}`)
 }
 
 lookup()
